@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        form = 사용자가 입력한 데이터들을 묶어서 다른 공간에 전달시켜주는 입력폼
+        action = 전송할 위치 적는 공간
+        method = get, post 전송방식
+        get : url이 다 드러나는 것(처리속도 빠름, 보안취약)
+        post : get 반대
+    -->
+    <form action="#">
+        <!-- 
+            1. 일반 문자를 입력하는 입력창
+            - input 태그는 닫는 태그가 존재하지 않는다 = 컨텐츠가 없다.
+            - ★ 실제 입력한 데이터는 value 속성에 저장
+            
+            2. 추가적인 속성
+            - placeholder : 미리보기 텍스트
+            - maxlength : 글자 수 제한
+        -->
+        <input type="text" value="안녕">
+        <input type="text" placeholder="이름을 입력하세요" maxlength="5">
+        <br>
+
+        <!-- 2. 비밀번호 입력하는 창-->
+        <!-- 
+            3. <label> 특정 input태그와 연결을 시켜주는 텍스트 박스
+                - for 속성을 사용 -> id값과 연결을 시켜야 함
+        -->
+        <label for="pw">비밀번호 : </label>
+        <input type="password" id="pw">
+
+        <!--
+            4. 체크박스 vs 라디오버튼
+            - 체크박스 : 복수개의 데이터를 선택
+            - 라디오버튼 : 2개면 2개중의 1개, 3개면 3개중의 1개
+        -->
+        <br>
+        <input type="checkbox"><input type="checkbox">
+        <br>
+        <label for="">남자</label> <input type="radio" name="text" value="남자">
+        <label for="">여자</label> <input type="radio" name="text" value="여자">
+        
+
+    </form>
+</body>
+</html>
