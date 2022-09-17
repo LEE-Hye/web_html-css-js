@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .btn{
+            border-radius: 7px;
+            border: none;
+            background-color: #406882;
+            padding: 5px;
+            color: white;
+        }
+        #mar{
+            resize: none;
+        }
+    </style>
+</head>
+
+<body>
+    <table width="400px">
+        <tr height="50px" bgcolor="#CCD6A6">
+            <th colspan="2">
+                아이디/비밀번호 입력
+            </th>
+        </tr>
+        <tr height="35px" bgcolor="EEF2E6">
+            <td align="right">아이디</td>
+            <td><input type="text" name="id" id="id"></td>
+        </tr>
+        <tr height="35px" bgcolor="EEF2E6">
+            <td align="right">비밀번호</td>
+            <td><input type="password" name="pw" id="pw"></td>
+        </tr>
+        <tr height="35px" bgcolor="EEF2E6">
+            <td align="right">비밀전호 확인</td>
+            <td><input type="password" name="pwcheck" id="pwcheck"></td>
+        </tr>
+
+
+        <tr height="50px" bgcolor="898AA6">
+            <th colspan="2">
+                개인정보
+            </th>
+        </tr>
+        <tr height="35px" bgcolor="C9BBCF">
+            <td align="right">성별</td>
+            <td>
+                <label for="man">남</label><input type="radio" name="gender" value="남" id="man">
+                <label for="woman">여</label><input type="radio" name="gender" value="여" id="woman">
+            </td>
+        </tr>
+        <tr height="35px" bgcolor="C9BBCF">
+            <td align="right">혈액형</td>
+            <td>
+                <select name="blood" id="blood">
+                    <option value="A">A형</option>
+                    <option value="B">B형</option>
+                    <option value="AB">AB형</option>
+                    <option value="O">O형</option>
+                </select>
+            </td>
+        </tr>
+        <tr height="35px" bgcolor="C9BBCF">
+            <td align="right">생일</td>
+            <td>
+                <input type="date">
+            </td>
+        </tr>
+
+
+        <tr height="50px" bgcolor="B7D3DF">
+            <th colspan="2">선호도</th>
+        </tr>
+        <tr height="35px" bgcolor="D6EFED">
+            <td align="right">취미</td>
+            <td>
+                <label for="soc">축구</label><input type="checkbox" name="hobby" value="soc" id="soc">
+                <label for="base">야구</label><input type="checkbox" name="hobby" value="base" id="base">
+                <label for="bask">농구</label><input type="checkbox" name="hobby" value="bask" id="bask">
+            </td>
+        </tr>
+        <tr height="35px" bgcolor="D6EFED">
+            <td align="right">좋아하는 색깔</td>
+            <td>
+                <input type="color" name="colr" id="colr" value="#D6EFED">
+            </td>
+        </tr>
+
+
+        <tr height="50px" bgcolor="406882">
+            <th colspan="2px">적고 싶은 말</th>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <textarea name="mar" id="mar" cols="65" rows="5" maxlength="180"></textarea>
+            </td>
+        </tr>
+
+
+        <tr height="50px">
+            <td colspan="2" align="center">
+                <input type="submit" value="제출하기" class="btn">
+                <input type="reset" value="초기화" class="btn">
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
