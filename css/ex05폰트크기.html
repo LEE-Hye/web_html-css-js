@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #span1{
+            font-size: 50px;
+        }
+        p{
+            /* 
+                px는 고정값으로 반응형으로 사용은 불가능
+                반응형 쓰려면 밑에 em이나 rem을 써야 함
+            */
+            font-size: 50px;
+        }
+        #span2{
+            /* 부모 픽셀인 p의 50px에 2배를 뜻함 */
+            font-size: 2em;
+        }
+        #span3{
+            /* 기본 픽셀이 16px인데 16px기준으로 2배를 뜻함 */
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <span id="span1">px로 조정한 글자</span>
+    <p>
+        <span id="span2">em으로 조정한 글자</span>
+        <span id="span3">rem으로 조정한 글자</span>
+    </p>
+</body>
+</html>
