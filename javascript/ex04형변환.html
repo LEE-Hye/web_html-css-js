@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // String -> Number
+        // 1. 정수형변환 -> parseInt("문자");
+        // 2. 실수형변환 -> parseFloate("문자");
+        // 3. 숫자형변환 -> Number("문자"); 😀
+
+        let txtInt = "10";
+        let txtFloat= "10.5";
+        let txtNum= "15.5";
+
+        let num1 = parseInt(txtInt);
+        let num2 = parseFloat(txtFloat);
+        let num3 = Number(txtNum);
+
+        console.log("인트형태", num1);
+        console.log("플롯형태", num2);
+        console.log("넘버형태", num3);
+
+
+        // Number -> String
+        // number.toString(n); -> n진법으로 출력
+        // String(number); 😀
+        let number = 100;
+        let str1 = number.toString(2);
+        let str2 = String(number);
+        console.log("toString", str1);
+        console.log("string", str2);
+
+    </script>
+</body>
+</html>

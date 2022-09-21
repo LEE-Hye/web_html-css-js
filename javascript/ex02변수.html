@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 변수
+        // var vs let
+        // var은 변수명의 중복이 발생
+        // let은 변수명의 중복이 불가능 -> 전체는 표준으로 사용이 된다.
+
+        // 상수
+        // const
+        // const는 상수 이기때문에 한번 선언이 되면, 다른 값을 넣을 수도 없고, 같은 이름을 사용할 수도 없다.
+        // 함수명을 만들 때 사용
+        var name = "진행";
+        console.log("name 변수값 ", name)
+        var name = "김동원";
+        console.log("name 변수값 ", name)
+
+
+        let age = 30;
+        const num = 15;
+        
+        // var 변수 재선언 가능/ 변수 재할당 가능
+        // let 변수 재선언 불가능/ 변수 재할당 가능
+        // const 변수 재선선 불가능/ 변수 재할당 불가능
+
+        
+        // 호이스팅
+        // 변수를 선언할 때 컴퓨터가 변수를 따로 만드는게 아니고 메모리에 미리 기억을 해둔다(자동)
+        // 오늘 꼭 호이스팅에 관련돼서 찾아보기
+        name2 = "김지은";
+        console.log(name2);
+
+        for(var i = 0; i < 3; i++){
+            console.log(i);
+        }
+        console.log(i)
+
+
+    </script>
+</body>
+</html>
