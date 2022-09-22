@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문</title>
+</head>
+<body>
+    <script>
+        // 조건문 = 특정 조건이 성립했을 때 동작하는 로직
+        // if, elsdeif, else, switch
+
+        // 코로나 검사 프로그램
+        // 1. 사용자에게 코로나 검사여부 확인하기 ( 확인 , 취소 ) = confirm
+        //     1.1 확인을 눌렀을 경우 양성,음성 확인하기 (양성, 음성) = prompt
+        //          1.1.1. 양성인 경우 "집에서 격리하세요" console창에 출력
+        //          1.1.2. 음성인 경우 "슈퍼항체 보유자" console창에 출력
+        //     1.2 취소를 눌렀을 경우 검사하라고 알림팝업 제공 = alert
+
+        let check = confirm("코로나 검사 하셨습니까?");
+        if(check){
+            let covid = prompt("'양성'인가요 '음성'인가요?");
+            if(covid === "양성"){
+                console.log("집에서 격리하세요");
+            }else if(covid === "음성"){
+                console.log("슈퍼 항체 보유자");
+            }else{
+                console.log("잘못입력하셨습니다.");
+            }
+        }else{
+            alert("검사하세요.");
+        }
+
+    </script>
+</body>
+</html>

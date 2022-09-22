@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+</head>
+<body>
+    <script>
+        // 함수 : 특정 기능들을 묶어서 활용할 때 사용
+        // syso(), print(), alert() = 내장함수
+        // 함수의 키워드는 ()
+        // 함수제작 : funtion(키워드) pizza(함수명) {}(로직 작성 공간)
+        // 매개변수 : 사용자가 보낸 값을 유동적으로 저장할 수 있는 공간
+        // return : 함수가 완료되면 보내주는 값(필수 요소는 아니다!)
+        //      -> 주의점! 리턴문을 만나는 순간 함수는 종료
+        function pizza(topping){
+            if(topping === "불고기"){
+                return "불고기는 솔드아웃입니다. 죄송합니다."
+            }
+            console.log("도우 세팅");
+            console.log("소스 세팅");
+            console.log(topping, "세팅");
+            console.log("피자 제작 완료!");
+            return "배달 완료 됐습니다!"
+        }
+        
+        // 함수 호출한다!
+        let txt = pizza("불고기");
+        let txt2 = pizza("페퍼로니");
+
+        // 리턴값 있으면 변수에 저장해서 불러야한다.
+        console.log("불고기 리턴값 : ", txt);
+        console.log("페퍼로니 리턴값 : ", txt2);
+    </script>
+</body>
+</html>

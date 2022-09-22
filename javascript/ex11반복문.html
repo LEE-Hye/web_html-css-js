@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문</title>
+</head>
+<body>
+    <script>
+        // 반복문 : 특정 로직을 반복적으로 실행해야 하는 경우에 사용되는 문법
+        // for(반복의 회수가 정해질 때), while(반복의 회수가 정해지지 않을 때)
+        // for문을 생성할 때 int i = 0 이 아니고! let i = 0 으로 생성!
+        let arr = [1,2,3];
+        for(let i = 0; i < arr.length ; i++){
+            console.log(arr[i])
+        }
+
+        // foreach문
+        // 배열 안에 있는 데이터를 하나씩 꺼내서 처리한다. = for문과 같은 역할
+        // function(데이터를 담아줄 변수, 인덱스를 담아줄 변수)
+        arr.forEach(function(data, index){
+            console.log("foreach : ", data);
+            console.log("인덱스 : ", index);
+        })
+
+
+    </script>
+</body>
+</html>

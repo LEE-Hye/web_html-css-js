@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체</title>
+</head>
+<body>
+    <script>
+        // 객체(object) = 여러개의 데이터를 담아서 관리하는 데이터 타입
+        // 1. 특징 데이터의 구조가 : Key : value
+        // 2. {}를 활용하여 생성
+        // 3. json형태의 데이터로 활용 --> 데이터 통신에서 가장 많이 쓰이는 데이터 타입
+        let birthDay = ["1223","1122", "0317", "0916"]
+        let birthDay2 = {
+            mybirth : "1223",
+            sisbirth: 1122,
+            mombirth : true,
+            fabirth : [1,2,3]
+        }
+
+        // 데이터를 접근
+        // 배열은 인덱스 번호를 활용해서 접근 --> 배열[인덱스]
+        // 객체는 key값을 통해서 접근 --> 객체 이름.key
+        console.log("배열 접근 : ", birthDay[2])
+        console.log("객체 접근 : ", birthDay2.mombirth)
+
+        // 값을 수정
+        birthDay[2] = "1221"
+        birthDay2.mombirth = "1221";
+
+        // 복잡한 구조의 접근 방법
+        let person = [
+                    {name : "정형", age : "10"},
+                    {name : {name2 : "김지은"}, age : "10"},
+        ]
+                    
+        // 실습 : 김지은 이름만 꺼내서 console 출력
+        // 힌트 : 배열은 인덱스, 객체는 키값
+        console.log(person[1].name.name2)
+
+
+    </script>
+</body>
+</html>
