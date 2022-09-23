@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM객체</title>
+</head>
+<body>
+    <h1 id="txt">h1 태그 글자
+        <span>스팬</span>
+    </h1>
+    <p class="num"></p>
+    <p class="num"></p>
+
+    <script>
+        // DOM을 만드는 이유
+        // DOM : document(html)를 만들어 주는데 태그,속성,콘텐츠를 각각 분리 시켜 만든다.
+        // <h1 id="txt">h1 태그 글자</h1> -> <h1>(태그), id(속성), h1태그 글자(컨텐츠)
+        // 이유 : 각각 태그, 속성, 컴텐츠에 접근을 하기 위해서
+
+        // 할 일: id가 txt인 요소를 가지고 와서, 그 안의 컨텐츠(내용)을 출력, 수정
+        // Step 1
+        // 1. 요소를 가지고 오는 최상위 객체 = document
+        // 2. 명령문 작성(id가 txt인 요소를 가져와!) = get(가져와) + element(요소를) + ById(id가 txt인거)
+        // 3. 주어 + 동사 + 목적어 + 보어
+        // 4. id값을 통해서 요소에 접근할때는 = document.getElementById("id값")
+        let h1Tag = document.getElementById("txt");
+        console.log(h1Tag);
+
+        // step 2
+        // 1. 가지고온 요소에서 컨텐츠(내용)을 추출
+        // 2. 명령문(요소 안에 있는 html or text를 가져와)
+        let htmlData = h1Tag.innerHTML; // 태그를 인식
+        let textData = h1Tag.innerText; // 태그를 인식하지 않는다.
+        console.log("innerHTMl : ", htmlData);
+        console.log("innerText : ", textData);
+
+
+        // step3
+        // 1. 가지고 온 요소에서 컨텐츠값을 수정
+        h1Tag.innerHTML = "<p>변경된 데이터!<p>"
+              
+    </script>
+</body>
+</html>
