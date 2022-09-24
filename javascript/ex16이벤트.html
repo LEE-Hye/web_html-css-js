@@ -99,6 +99,16 @@
                 alert("foreach문을 통한 이벤트 부여");
             })
         })
+
+        // 8. querySelector : 선택자를 통해서 가지고 올 때 사용
+        // - querySelector : 단일 요소(1개)만 가지고 올 때 사용
+        // - querySelectorAll : 복수개의 데이터를 가지고 올 때 사용
+        // - 주의점! 복수개의 리턴타입이 htmlCollection이 아니고 Nodelist
+        // - nodelist의 특징 : 배열 함수를 바로 사용 가능
+        let selectorBtn = document.querySelector("#btn-han");
+        let selectorAll = document.querySelectorAll("button");
+        console.log("셀렉터를 통한 수집 : ", selectorBtn);
+        console.log("셀렉터All을 통한 수집 : ", selectorAll);
     </script>
 </body>
 </html>
