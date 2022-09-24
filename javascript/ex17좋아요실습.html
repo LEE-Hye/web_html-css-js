@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    ❤<span id="number">0</span>
+    <br><br>
+    <button id="like">좋아요</button>
+    <button id="hate">싫어요</button>
+
+    <script>
+        // 좋아요 기능 만들기~
+        // 실습 : 좋아요, 싫어요 버튼을 클릭했을 때 span태그의 숫자값이 증가, 감소
+
+        // 1. like, hate함수를 제작
+        // 2. like함수는 id가 like인 버튼에 클릭 이벤트로 할당(addEventListner)
+        // 3. hate함수는 id가 hate인 버튼에 클릭 이벤트로 할당(addEventListner)
+        // 4. like와 hate함수가 실행될 때, span태그의 컨텐츠(0)값을 alert으로 출력
+        // 5. like버튼을 클릭했을 때 span태그의 값이 1씩 증가
+        //  - like버튼을 클릭했을 때 span태그의 값이 1씩 감소
+        // - 힌트!
+        // - 1. innerhtml, innertext 데이터는 문자형태 -> 형변환!
+        // - 2. 변경된 값을 다시 span태그에 넣어줘야 화면이 변화!
+        function like(){
+            // 과거의 span값을 담고 있는 변수일 뿐
+            // 다시 값을 넣으려면 다시 접근!
+            // 수정할땐 html / 추출할 땐 innertext 
+            let spanText = document.getElementById("number").innerText;
+            spanText = Number(spanText)+1;
+            document.getElementById("number").innerHTML = Number(spanText);
+            
+            
+        }
+        function hate(){
+            let spanText = document.getElementById("number").innerText;
+            spanText = Number(spanText)-1;
+            document.getElementById("number").innerHTML = Number(spanText);
+        }
+        document.getElementById("like").addEventListener("click", like);
+        document.getElementById("hate").addEventListener("click", hate);
+    </script>
+</body>
+</html>
