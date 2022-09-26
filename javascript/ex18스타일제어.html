@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일제어</title>
+    <style>
+        h1{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="txt">DOM조작한 스타일 제어</h1>
+    <button id="btn">스타일 변경!</button>
+
+    <script>
+        // 할 일 : 버튼을 클릭했을 때 h1태그의 스타일을 변경
+
+        // 1. change함수를 제작
+        function change(){
+            // 스타일 제어
+            // 1. 스타일을 제어할 요소에 접근
+            // 2. 그 요소의 프로퍼티(키 값) 중 style이라는 값에 접근
+            console.log(document.getElementById("txt").style)
+            // 글자 색상을 변경
+            // style객체에 접근한 다음에 변경하고자 하는 키 값까지 접근
+            // 변경하고자 할 때는 =(대입) 값을 넣어주면 된다!
+            document.getElementById("txt").style.color = "red";
+            // 배경색을 노란색으로 변경
+            // 주의점! 속성은 항상 카멜케이스로 작성(-을 지원하지 않는다)
+            document.getElementById("txt").style.backgroundColor = "yellow";
+            let col = document.getElementById("txt").style.color;
+            console.log("글자색은? ", col);
+            
+            // 내부, 외부 방식의 css코드를 불러오는 방식
+            // getComputedStyle("요소").Key
+            let txt = document.getElementById("txt");
+            console.log("내부 외부 방식 스타일 : ", getComputedStyle(txt).color);
+        }
+        // 2. 버튼을 클릭했을 때 change함수가 실행되게 바인딩(연결)
+        // 아래 같은게 callback 함수래(뭔지 한번 찾아보자)
+        document.getElementById("btn").addEventListener("click", change);
+
+        // style은 인라인(태그내에 직접 쓰는 것) 안에 작성된것만 인식
+        // 수정을 해도 인라인 방식으로 수정
+    </script>
+</body>
+</html>

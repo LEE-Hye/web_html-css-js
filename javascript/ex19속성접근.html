@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input-txt">
+    <br><br>
+    <button onclick="input_val()">인풋 태그 값 가지고 오기!</button>
+    <br><br>
+    <!-- id나 class는 - 이거 쓰는게 좋음 -->
+    <img id="img-src" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA5MDVfNSAg%2FMDAxNjYyMzQyODY4ODUy.T-eybrephilDulJRRe0gJ5I5gb2-aZb49Fd7n5fulf0g.YlhilikuMhRuIFb2uzB0cloPfGUO00_jo90rCtBXHJMg.JPEG.eliezer8617%2FScreenshot%25A3%25DF20220905%25A3%25AD103611.jpg&type=sc960_832">
+    <br><br>
+    <button onclick="img_attr()">이미지 태그 속성 접근</button>
+
+
+    <script>
+        // 버튼을 클릭했을 때 input태그의 값을 출력
+        function input_val(){
+            // 1. input태그의 요소를 수집
+            // 2. 그 안의 값을 출력
+            // innerHtml, innerText로는 값을 접근이 불가능하다.
+            // input태그는 컨텐츠가 없고, value속성에 값을 저장
+            let txt = document.getElementById("input-txt").value;
+            console.log(txt);
+        }
+
+        function img_attr(){
+            // 함수가 실행이 되면 img 태그의 src속성을 들고오기!
+            // 1. 이미지 태그 수집
+            // 2. 수집된 태그에서 src속성을 접근
+            // document.getElementById("img-src").src도 가능한데 class는 불가능함
+            // getAttribute는 다 가져올 수 있어서 속성 접근할 땐 아래처럼 가져오는게 좋음
+            let src = document.getElementById("img-src").getAttribute("src");
+            console.log("이미지 src : ", src);
+
+            let id = document.getElementById("img-src").getAttribute("id");
+            console.log("이미지 id : ", id);
+
+            // 이미지 태그의 src(속성)값을 변경할때는 setAttribute
+            // setAttribute("변경할 속성", "변경할 값");
+            document.getElementById("img-src").setAttribute("src", "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTExMjBfMjY5%2FMDAxNjM3NDEzMTE4ODc1.61fOSoHKov729K4L9fZ8ql21OaIFYV7bMvNjKDICyiYg.Q1CQ0eCsBQZC_8HHBBqpKIvhgMVrWC4IWqVngfkl1d0g.JPEG.yulsaeng%2F20211119%25A3%25DF100327.jpg&type=sc960_832")
+
+            // 프로퍼티(key값) 버전으로 작성한다면(참고★)
+            document.getElementById("img-src").src // 가지고 올 때
+            document.getElementById("img-src").src  = "변경값" // 수정할 때
+        }
+    </script>
+</body>
+</html>
