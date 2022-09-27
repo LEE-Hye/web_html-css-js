@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리</title>
+    <script src="jquery-3.6.1.min.js"></script>
+</head>
+<body>
+    <h1 id="txt">h1텍스트</h1>
+
+    
+    <script>
+        // html 작성하고 그 아래에다 적어줘야 함
+        // 할 일 : id가 txt인 요소의 글자정보만 콘솔창에 출력
+        let js = document.getElementById("txt").innerHTML;
+        console.log("순수 자바크스립트 : ", js);
+
+        // 제이쿼리 문법으로 접근
+        let jquery = $("#txt").html();
+        console.log("제이쿼리 :", jquery );
+        // 제이쿼리 문법으로 수정
+        $("#txt").html("수정할 데이터");
+
+        // 스타일 제어
+        document.getElementById("txt").style.color = "red"; // js
+        $("#txt").css("color", "red"); // jq
+
+        // 할 일 : h1태그를 클릭했을 때 alert창으로 텍스트를 출력
+        // 이벤트 처리
+        document.getElementById("txt").addEventListener("click", function(){
+            alert("클릭 발생!");
+        }) // js
+        $("#txt").on("click", function(){
+            alert("클릭 발생!");
+        }) // jq
+
+        
+    </script>
+</body>
+</html>
