@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영화</title>
+    <script src="jquery-3.6.1.min.js"></script>
+</head>
+<body>
+    <button id = "btn">영화데이터 요청</button>
+
+    <script>
+        // 버튼을 클릭시, 영화 api를 요청을 해서 영화 제목만 콘솔창에 출력
+        // 비동기통신(ajax) 활용
+        $('#btn').on('click', function(){
+            // 객체 형태로 보냄(키 : 벨류)
+            $.ajax({
+                // 데이터를 요청할 서버의 url을 작성
+                // url / type / data
+                url : "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchWeeklyBoxOfficeList.json?key=1c13d5d92c20fc4b94233fdc25dbde05&targetDt=20120101",
+                // 데이터 전송 타입(get, post) 기본값은 get
+                type : "get",
+                // data : 보낼 값이 있다면 작성, 값이 없다면 생략 가능
+                success : function(res){
+                    // 성공했을 때 데이터를 받기 위해서 매개변수를 꼭 작성해야한다.
+                    // Object인 객체는 .키값 가져오면 되고, Array인 배열은 인덱스 값 가져오면 됨
+                    let arr = res.boxOfficeResult.weeklyBoxOfficeList
+                    for(let i =0; i < arr.length; i++){
+                    console.log(arr[i].movieNm);
+                    }
+                },
+                error : function(){
+                    alert("연결 실패");
+                } 
+
+            });
+        })
+    </script>
+</body>
+</html>
