@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let student = {
+        name: "hyung",
+        age: "30",
+        gender: "men",
+      };
+
+      console.log(student); // 객체형태 출력해보가ㅣ
+      console.log(student.name); // 특정 키값을 통해 value 불러오기
+      console.log(student["name"]); // 다른 접근 방식
+
+      student.name = "haedo"; // 특정 키값 벨류 변경
+      student["age"] = 40;
+      console.log(student);
+
+      let studentList = [
+        { name: "hyung", age: 20 },
+        { name: "haedo", age: 40 },
+      ]; // 배열안에 객체로 넣을수 있음
+      console.log(studentList);
+      console.log(studentList[0].name); //배열에서 접근하기 때문에 인덱스를 먼저 써주고 객체에 접근
+      console.log(studentList[0]["name"]);
+    </script>
+  </body>
+</html>

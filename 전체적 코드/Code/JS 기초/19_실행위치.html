@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!--
+        2. 외부방식
+        - js 파일을 불러와서 동작하는 방식
+        - 장점 : 코드의 재사용성이 높다, 보안에 좋음
+    -->
+    <script src="20_main.js"></script>
+  </head>
+  <body>
+    <script>
+      // 1. 내부 방식
+      // - html코드 내부에 직접 작성하는 방법
+      // - 장점 : 빠르게 타이핑이 가능하다 / 단점 : 코드가 노출 된다, 코드의 재사용성이 낮음
+      txt();
+    </script>
+
+    <!-- 
+        3. 인라인방식
+        - 태그안에 직접 명시하는 방법
+        - 장점 : 단순로직 처리에 유용 / 단점 : 노출, 재사용성 낮음
+    -->
+    <button onclick="alert('버튼클릭')">버튼 클릭</button>
+  </body>
+</html>

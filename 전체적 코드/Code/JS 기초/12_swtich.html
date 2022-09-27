@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // ARS 프로그램 제작
+      // 사용자가 1을 입력시 "요금조회" 출력
+      // 사용자가 2를 입력시 "요금제변경" 출력
+      // 사용자가 *을 입력시 "다시듣기" 출력
+      // 사용자가 0을 입력시 "상담원연결" 출력
+      // 그 외 입력은 "다시입력하세요" 출력
+      let user = prompt("숫자를 입력해주세요");
+      if (user == 1) {
+        alert("요금조회");
+      } else if (user == 2) {
+        alert("요금제변경");
+      } else if (user == "*") {
+        alert("다시듣기");
+      } else if (user == 0) {
+        alert("상담원연결");
+      } else {
+        alert("다시입력하세요");
+      }
+
+      // switch로 변경
+      // 값을 비교하기 때문에 타입을 맞춰야 한다.
+      // 값이 하나로 딱 떨어지는 경우에만 사용 가능
+      // ex) if(num > 3 && num < 10)과 같은 표현이 불가능
+      // 많이 사용하지 않는 추세
+      switch (user) {
+        case "1":
+          alert("요금조회");
+          break;
+        case "2":
+          alert("요금제변경");
+          break;
+        case "*":
+          alert("다시듣기");
+          break;
+        case "0":
+          alert("상담원연결");
+          break;
+        default:
+          alert("다시입력하세요");
+      }
+    </script>
+  </body>
+</html>

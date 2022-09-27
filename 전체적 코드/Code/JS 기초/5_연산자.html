@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 산술연산자
+      // +, -, *, /, %
+      // 특이점! "/" 나누기 입니다!
+      let num1 = 10;
+      let num2 = 5;
+      console.log("/는 나누기입니다", num1 / num2);
+
+      // 비교연산자
+      // == vs ===
+      // ==는 데이터 타입을 검증하지 않고 값만 비교 -> 숫자를 문자로 강제 형변환을 시킴
+      // ===는 데이터 타입과 값 둘다 비교 -> 권장사항
+      let text = "1";
+      let number = 1;
+      console.log("== 결과", text == number); //true
+      console.log("=== 결과", text === number); //false
+
+      // 논리연산자
+      // && vs ||
+      // &&는 모두 참일때 true를 반환, 하나라도 거짓이면 false
+      // ||는 하나라도 참일때 true
+      let trueData = true;
+      let falseData = false;
+      console.log("&& 연산 결과", trueData && falseData);
+      console.log("&& 연산 결과", trueData && trueData);
+      console.log("|| 연산 결과", trueData || falseData);
+    </script>
+  </body>
+</html>

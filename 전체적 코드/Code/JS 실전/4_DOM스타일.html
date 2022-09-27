@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="txt">DOM 조작을 통한 CSS 수정</h1>
+    <button id="btn">스타일 변경</button>
+
+    <script>
+      // 할일 = 버튼을 클릭시 h1태그 컨텐츠 값의 디자인(css)를 수정
+
+      // 1. change함수를 정의 후 button에 이벤트 부여
+      // 2. id가 txt인 요소의 스타일을 변경
+      function change() {
+        // 스타일 객체를 출력해 보면 모든 css 속성들이 등장
+        console.log(document.getElementById("txt").style);
+        // 접근방법 style.key(원하는 속성)
+        console.log("스타일", document.getElementById("txt").style.color);
+        // 수정방법 style.key(원하는 속성) = "값"
+        document.getElementById("txt").style.color = "red";
+        // 주의점★ 모든 속성값은 카멜케이스로 작성
+        document.getElementById("txt").style.backgroundColor = "yellow";
+      }
+      document.getElementById("btn").addEventListener("click", change);
+
+      // style vs getComputedStyle
+      // style = inline으로 정의를 하며 , inline으로 정의된 css만 읽음(외부,내부는 불가능)
+      // getcomputedstyle = 모든 css를 읽어드림
+      let tag = document.getElementById("txt");
+      console.log("함수 : ", getComputedStyle(tag).color);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 딸기게임
+      // Step 1
+      // 플레이어는 상대방의 이름, 횟수 총 2가지 값을 입력합니다
+      let name = prompt("상대방의 이름을 입력하세요");
+      let num = prompt("횟수를 입력하세요");
+
+      // Step 2
+      // 플레이어가 입력한 횟수만큼 상대방의 이름을 출력하세요
+      // ex) 이광수, 4 => 이광수 이광수 이광수 이광수 (콘솔창 활용)
+      for (let i = 0; i < num; i++) {
+        console.log(name);
+      }
+
+      // Step 3
+      // 플레이어가 입력한 숫자가 4보다 크면 "플레이어 아웃"이라는 알림 팝업창 출력(alert 활용)
+
+      if (num <= 4) {
+        for (let i = 0; i < num; i++) {
+          console.log(name);
+        }
+      } else {
+        alert("플레이어 아웃");
+      }
+    </script>
+  </body>
+</html>

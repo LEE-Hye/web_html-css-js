@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 코로나 검사 프로그램
+      // 1. 사용자에게 코로나 검사여부 확인하기 ( 확인 , 취소 )
+      //     1.1 확인을 눌렀을 경우 양성,음성 확인하기 (양성, 음성)
+      //     1.2 취소를 눌렀을 경우 검사하라고 알림팝업 제공
+      // 2. 양성인 경우 "집에서 격리하세요" console창에 출력
+      // 3. 음성인 경우 "슈퍼항체 보유자" console창에 출력
+
+      let check = confirm("코로나 검사를 하셨나요?");
+      if (check) {
+        let covid = prompt("양성이신가요? 음성이신가요?");
+        if (covid == "양성") {
+          console.log("집에서 격리하세요!!");
+        } else if (covid == "음성") {
+          console.log("슈퍼항체 보유자");
+        }
+      } else {
+        alert("검사하고 오세요!!");
+      }
+    </script>
+  </body>
+</html>

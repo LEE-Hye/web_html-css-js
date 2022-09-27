@@ -1,0 +1,35 @@
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // String -> Number
+      // 정수형변환 -> parseInt("문자");
+      // 실수형변환 -> parseFloat("문자");
+      let textInt = "123";
+      let textFloat = "1.15";
+      let textNum = "100";
+
+      let num1 = parseInt(textInt);
+      console.log("정수 형변환 : ", num1);
+      let num2 = parseFloat(textFloat);
+      console.log("실수 형변환 : ", num2);
+      let num3 = Number(textNum);
+      console.log("넘버 형변환 : ", num3);
+
+      // Number -> String
+      // number.toString(n) -> n진법으로 변경가능
+      // String(number) -> 문자로만 변형
+      let number = 10;
+      let string = number.toString();
+      let string2 = String(number);
+      console.log("문자 형변환 1 : ", string);
+      console.log("문자 형변환 2 : ", string2);
+    </script>
+  </body>
+</html>

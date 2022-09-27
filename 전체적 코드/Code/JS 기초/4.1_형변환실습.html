@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 할일 : 사용자에게 2개의 값을 입력받아 더한 값을 콘솔창에 출력하시오
+      // Step 1
+      // 1. 사용자에게 2개의 값을 입력받고 각각 변수에 저장하시오
+      let num1 = prompt("첫번째 숫자를 입력하세요");
+      let num2 = prompt("두번째 숫자를 입력하세요");
+
+      // 2. num1과 num2값의 더하기 연산 결과값을 console창에 출력하시오
+      console.log("num1과 num2를 더한값", num1 + num2);
+
+      // 3. prompt의 리턴값은 문자열이기 때문에 문자열끼리 연산이 진행됨
+      // - 형변환을 통하여 숫자값으로 변경 후 숫자연산이 가능하게 작성하시오
+      console.log("num1과 num2를 더한값", Number(num1) + Number(num2));
+    </script>
+  </body>
+</html>

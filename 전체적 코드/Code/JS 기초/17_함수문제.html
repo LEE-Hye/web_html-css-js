@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 버거킹 말고 킹데리아 프로그램
+      // Step1
+      // 1. 사용자에게 먹고싶은 햄버거를 입력 받습니다(prompt 활용)
+      // ex) 치즈,불고기,핫크리스피
+      // 2. 세트메뉴인지 단품메뉴인지 입력 받습니다(prompt 활용)
+      // ex) 세트, 단품
+      let burger = prompt("어떤 햄버거를 주문 하시 겠습니까?");
+      let type = prompt("세트메뉴 이신가요 단품 이신가요?");
+
+      // Step2
+      // 1. 사용자가 입력한 햄버거를 제작하는 함수를 작성하시오
+      // 2. 단, 햄버거를 가격은 5000원 입니다. 5000을 반환 해주세요 (return)
+      // 3. 작성 완료 후 잘 출력되는지 확인 해보기.
+      // ex) 빵깔기, 토마토올리기, 입력한패티, 소스, 빵닫기 등 자유로운 순서대로 console 작성
+      function makeHamburger(burger) {
+        console.log("밑에 빵을 깐다.");
+        console.log("토마토를 올린다.");
+        console.log(burger, "패티를 올린다.");
+        console.log("비법 소스를 뿌린다.");
+        console.log("빵을 덮는다.");
+        console.log("띠리리 띠리리 버거완성");
+        return 5000;
+      }
+
+      // Step3
+      // 1. 콜라를 만드는 함수 작성하기, 가격은 2000원
+      // 2. 감자튀김을 만드는 함수 작성하기, 가격은 1500원,
+      // ex) 콜라완성, 감자튀김 완성 심플하게 작성
+      function makeCoke() {
+        console.log("콜라 완성");
+        return 2000;
+      }
+      function makePotato() {
+        console.log("감튀 완성");
+        return 1500;
+      }
+
+      // Step4
+      // 1. 사용자가 "단품"을 입력 했을 경우에는 햄버거만 만드는 함수를 호출
+      // 2. 사용자가 "세트"를 입력 했을 경우에는 햄버거,콜라,감튀 만드는 함수 호출
+      // 3. 사용자가 지불 해야하는 가격을 콘솔창을 통해 출력
+      if (type === "단품") {
+        let burgerPrice = makeHamburger(burger);
+        console.log("총 지불하실 가격은 :", burgerPrice, "원 입니다.");
+      } else if (type === "세트") {
+        let burgerPrice = makeHamburger(burger);
+        let cokePrice = makeCoke();
+        let potatoPrice = makePotato();
+        console.log(
+          "총 지불하실 가격은 :",
+          burgerPrice + cokePrice + potatoPrice,
+          "원 입니다."
+        );
+      }
+    </script>
+  </body>
+</html>

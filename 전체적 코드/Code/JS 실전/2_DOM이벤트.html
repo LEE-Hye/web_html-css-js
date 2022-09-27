@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="txt">h1태그 컨텐츠</h1>
+    <button id="btn_han">핸들러용 버튼</button>
+    <button id="btn_lis">리스너용 버튼</button>
+    <button id="btn_event">이벤트객체용 버튼</button>
+    <script>
+      // event = 특정 요소에 원하는 이벤트를 부여 해봅시다.
+      // ex) click, mouseover, mouseout ..
+
+      // eventHandler vs eventListener
+      // 1. eventHandler
+      // -  하나의 요소에 하나의 이벤트만 가능
+      // -  html태그에 설정 or 이벤트 프로퍼티 설정
+      // 2. eventListener
+      // -  하나의 요소에 여러개의 이벤트를 처리 가능
+
+      // 실습 : 버튼을 클릭 시 id가 'txt'요소의 컨텐츠 값을 팝업창으로 출력
+      // 1.  팝업창을 출력하는 함수를 정의
+      function text() {
+        let h1Con = document.getElementById("txt").innerHTML;
+        alert(h1Con);
+      }
+      function text2() {
+        let h1Con = document.getElementById("txt").innerHTML;
+        alert(h1Con + "두번째 함수");
+      }
+
+      // 2. html태그에 직접 작성하는 방법
+      // <button id="btn" onclick="text()">클릭</button>
+      // 단점 : 하나의 이벤트만 처리가 가능, 함수명이 노출됨(보안취약)
+
+      // 3. 이벤트 프로퍼티를 활용
+      // 단점 : 하나의 이벤트만 처리가 가능
+      let btn = document.getElementById("btn_han");
+      btn.onclick = text;
+      btn.onclick = text2;
+
+      // 4. 이벤트 리스너를 활용
+      // 장점 : 다중이벤트 등록이 가능 , 단점 : 코드가 길어짐
+      let btn2 = document.getElementById("btn_lis");
+      btn2.addEventListener("click", text);
+      btn2.addEventListener("click", text2);
+
+      // 5. 함수를 직접 등록가능하다(익명함수)
+      btn.onclick = function () {
+        alert("직접 등록한 함수입니다");
+      };
+      btn2.addEventListener("click", function () {
+        alert("나도 직접 등록한 함수입니다.");
+      });
+
+      // ★ 알아두면 좋아요
+      // 6. 이벤트 객체
+      // 이벤트가 발생하는 주체, 종류 등을 알 수 있다
+      // 1. target = 발생하는 주체
+      // 2. type = 이벤트의 종류
+      // 기본값 = event
+      let btn_event = document.getElementById("btn_event");
+      btn_event.onclick = function (e) {
+        console.log(e);
+        console.log("타겟 :", e.target);
+        console.log("종류 :", e.type);
+        console.log("기본값 :", event.target);
+      };
+
+      // 7. 이벤트를 부여할 대상이 많다면?
+      let btns = document.getElementsByTagName("button");
+      for (let i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+          alert("각자 이벤트 등록!");
+        });
+      }
+
+      // 7.1 Collection객체는 배열로 변환 후, forEach 사용가능 >> 심화로 빼기
+      let arr = Array.from(btns);
+      arr.forEach(function (data) {
+        console.log("데이터", data);
+        data.addEventListener("click", function () {
+          alert("collection객체 변환완료");
+        });
+      });
+
+      // 7.2 NodeList객체는 forEach바로 사용가능
+      let btns2 = document.querySelectorAll("button");
+      btns2.forEach(function (element) {
+        console.log("데이터", element);
+        element.addEventListener("click", function () {
+          alert("NodeList로 활용");
+        });
+      });
+    </script>
+  </body>
+</html>

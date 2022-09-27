@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="input_txt" />
+    <img
+      id="img_src"
+      src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTEwMDJfMTI3%2FMDAxNjMzMTMzNjczMTYy.cbRKea2v_QE7S1sJjGlSpJ6v2vzGRn1ErK8IInYgKX0g.NGWqv0-YqGhGMnwG77ttXo2Polk3EqX_NstmvyIbUrEg.JPEG.sss_hm%2FIMG_4256.JPG&type=a340"
+    />
+    <br /><br />
+    <button onclick="input_val()">인풋태그 값</button>
+    <button onclick="img_val()">이미지 값 불러오기</button>
+    <button onclick="img_val_change()">이미지 값 수정</button>
+    <script>
+      // 할일 input_val함수 실행시 input태그의 값 console창에 출력
+      function input_val() {
+        let val = document.getElementById("input_txt").innerHTML;
+        console.log("인풋 값 : ", val); // inner값을 못가지고 온다. 왜? input은 컨텐츠에 값을 저장 X
+        let realVal = document.getElementById("input_txt").value;
+        console.log("인풋 밸류 값 : ", realVal);
+      }
+
+      // 할일 img_val함수 실행시 img태그의 src값 console창에 출력
+      function img_val() {
+        // 속성에 접근할때는 요소.getAttribute("속성")을 통해서 접근가능
+        let src = document.getElementById("img_src").getAttribute("src");
+        console.log("src 값 : ", src);
+        let img_id = document.getElementById("img_src").getAttribute("id");
+        console.log("id 값 : ", img_id);
+      }
+
+      // 할일 img_val_change함수 실행시 img태그의 src값을 변경
+      function img_val_change() {
+        // 수정을 한다. get의 반대는 ? set
+        // 요소.setAttribute("속성","값")
+        document
+          .getElementById("img_src")
+          .setAttribute(
+            "src",
+            "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDA5MDFfNDkg%2FMDAxNTk4OTcwMjYyNTc3.TCQLP5fP1LIauS6mwBEGaQFyWlpmIJxHyiMtJOKzE1Ag.ai4g5TS9WeJ-miT_JSWzK_IdvTxHHcGermy4F9Ev5DIg.JPEG.doitbubu%2FIMG_28491.JPG&type=a340"
+          );
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 당신은 카카오 본사의 면접관 입니다.
+      // 이번 신입공채로 총 1명이 지원 하였습니다.
+      // 이번 공채에는 프론트앤드 개발자를 채용할 예정입니다.
+      // 필수 능력은 html,javascript 입니다
+      // 지원자의 기술 stack중 2가지 모두 만족하는 사람만 채용할 수 있는 로직을 작성해주세요.
+      // ★조건★
+      // 1. 2가지 모두 보유한 사람은 합격통보
+      // 2. 1가지를 보유한 사람은 예비통보
+      // 3. 그 외는 탈락통보
+
+      let hyung = ["css", "html", "javascript", "react", "crawling"];
+      if (hyung.includes("html") && hyung.includes("javascript")) {
+        alert("합격입니다!");
+      } else if (hyung.includes("html") || hyung.includes("javascript")) {
+        alert("예비입니다.");
+      } else {
+        alert("탈락입니다.");
+      }
+    </script>
+  </body>
+</html>

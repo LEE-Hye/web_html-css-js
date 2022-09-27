@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // var가 let보다 먼저 등장
+      // let es6문법으로 2015년 등장
+      console.log(num);
+      var num = 1;
+      console.log(num); // 실행결과 undefined,1 출력
+      // 호이스팅때문에 가능
+      // 코드가 실행되면 메모리에 변수들을 저장을 먼저한다.
+      function number() {
+        var b = 0;
+      }
+      console.log(b);
+      // 전역변수와 지역변수의 구분이 어렵다.
+      // 1. 함수에서만 지역변수로 활용한다.
+      // ex) 반복문 등 다른 문법에서는 전역변수로 올린다.
+      for (var i = 0; i < 5; i++) {
+        console.log("반복문", i);
+      }
+      console.log(i);
+
+      // 변수의 이름이 중복이 된다.
+      var num2 = 1;
+      console.log(num2);
+      var num2 = 2;
+      console.log(num2);
+
+      // let도 호이스팅이 일어나긴 한다.
+      // 하지만 Temporal Death Zone(TDZ)에 저장을 해두고 변수가 선언문이 나오기 전까지는 접근이 불가능 하다.
+    </script>
+  </body>
+</html>

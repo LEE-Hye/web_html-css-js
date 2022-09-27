@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--
+        DOM 객체는 HTML문서내의 요소들을 다 단일 요소로 쪼개준다고 생각하면 된다.
+            ex) <h1 id='txt'>H1태그</h1> => <h1>(태그), id(속성), txt(값), H1태그 (컨텐츠)
+        쪼개는 이유는 각각 단일 요소에 접근을 하기 위해서 나눠준다.
+    -->
+    <h1 id="txt">
+      <span>H1태그</span>
+    </h1>
+    <p class="num">1</p>
+    <p class="num">2</p>
+
+    <script>
+      // 할일 : id가 txt인 요소에 접근 후 그 안의 컨텐츠 값을 추출 및 수정.
+      // Step 1
+      // 1. 모든 문서를 담고 있는 주체에게 요청 = document
+      // 2. 명령문 작성( id가 txt인 요소를 가져와줘) = get(가져오다) + element(요소를) + byid(아이디를 통해서)
+      // 3. 주어 + 동사 + 목적어 + 보어 순으로 해석하면 편하다.
+      let h1Tag = document.getElementById("txt");
+      console.log("가지고온 요소 :", h1Tag);
+
+      // Step 2
+      // 1. 가지고온 요소에서 컨텐츠(내용)을 추출해 보세요
+      // 2. 명령문 작성(요소 안에 있는 html or text 값을 보여줘) = 안에있는(inner) + html(HTML) or text(Text)
+      let htmlData = h1Tag.innerHTML; // html을 인식한다
+      let textData = h1Tag.innerText; // html을 인식하지 못한다.
+      console.log("innerHTML : ", htmlData);
+      console.log("innerText : ", textData);
+
+      // Step 3
+      // 1. 가지고온 요소에서 컨텐츠(내용)을 수정해 보세요
+      // 2. 명령문 작성(요소 안의 내용을 들고온 다음 <p>변경한 데이터</p>을 대입해줘)
+      h1Tag.innerHTML = "<p>변경한 데이터</p>"; // html을 인식한다.
+      h1Tag.innerText = "<p>변경한 데이터</p>"; // html을 인식하지 못한다.
+
+      // 할일 : class가 number인 요소들에 접근 후 그 안의 컨텐츠 값을 추출 및 수정.
+      // Step 1
+      // 1. 모든 문서를 담고 있는 주체에게 요청 = document
+      // 2. 명령문 작성(class가 num인 요소들을 가져와줘) = get(가져오다) + elements(요소들을)+ byClassName(클래스를 통해서)
+      let pTag = document.getElementsByClassName("num");
+      console.log("가지고온 요소 : ", pTag);
+
+      // Step 2
+      // 1. 가지고온 요소에서 컨텐츠(내용)을 추출해 보세요
+      let htmlData2 = pTag.innerHTML;
+      console.log("innerHTML", htmlData2); // undefined 왜?
+
+      let htmlData3 = pTag[0].innerHTML;
+      console.log("innerHTML : ", htmlData3); // 복수개의 데이터 이기때문에, 유사배열 형태로 넘어옴 index값을 활용 해야함
+      console.log("길이 확인 : ", pTag.length); // 배열처럼 길이를 사용 가능
+    </script>
+  </body>
+</html>
